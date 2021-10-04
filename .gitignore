@@ -1,0 +1,7 @@
+.idea
+.pytest_cache
+build
+dist
+*.egg-info
+..gitignore.un~
+.gitignore~
