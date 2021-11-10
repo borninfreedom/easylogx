@@ -9,25 +9,24 @@
 现在只需要在你的 python 环境中，执行
 
 ```bash
-pip install easy-logx
+pip install -U easylogx
 ```
 
 就把这个 python 包安装成功了，那么以后在自己的工程中，只需要输入
 
 ```python
-from easy_logx.easy_logx import EasyLog
+from easylogx import Easylogx
 
-logger = EasyLog() #默认log的名字是__name__,默认log等级是DEBUG
+logger = Easylogx() #默认log的名字是__name__,默认log等级是DEBUG
 logger.debug('test')
 ```
 
 就可以实现 console 的 log 调试功能，如果想更进一步，可以给 logger 输入自己指定的名字和 log 的等级
 
 ```python
-import logging
-from easy_logx.easy_logx import EasyLog
+from easylogx import Easylogx, DEBUG, ERROR, INFO
 
-logger = EasyLog('test_log',logging.INFO)
+logger = Easylogx('test_log',INFO)
 logger.info('info_test')
 logger.debug('debug_test')
 ```
@@ -35,10 +34,9 @@ logger.debug('debug_test')
 如果想把调试信息同时输出到文件里面，只需要添加一个 fileHandler 就可以了。
 
 ```python
-import logging
-from easy_logx.easy_logx import EasyLog
+from easylogx import Easylogx
 
-logger = EasyLog()
+logger = Easylogx()
 logger.info('info_test')
 logger.debug('debug_test')
 
@@ -49,10 +47,9 @@ logger.debug('file_test')
 这时候会自动生成一个 default.log 文件，存储我们的调试信息，我们也可以指定文件的名字和写入的方式，比如每次追加或者每次执行清空文件后再写入。
 
 ```python
-import logging
-from easy_logx.easy_logx import EasyLog
+from easylogx import Easylogx
 
-logger = EasyLog()
+logger = Easylogx()
 logger.info('info_test')
 logger.debug('debug_test')
 
@@ -65,12 +62,16 @@ logger.debug('file_test')
 ## 安装方式
 
 ```bash
-pip install easy-logx
+pip install -U easylogx
 ```
 
 ## 发布到pypi的指令
 
-发布方法是参考的这个：[发布代码到 PyPI | Python技术 (justdopython.com)](https://www.justdopython.com/2020/05/13/Python-pip/)，https://stackoverflow.com/questions/52016336/how-to-upload-new-versions-of-project-to-pypi-with-twine
+如果想把自己写的程序发布到pypi，让用户可以直接通过pip install安装来使用，可以参考下面的博客：
+
+发布方法是参考的这个：[发布代码到 PyPI | Python技术 (justdopython.com)](https://www.justdopython.com/2020/05/13/Python-pip/)，
+
+一些问题的处理参考的这个https://stackoverflow.com/questions/52016336/how-to-upload-new-versions-of-project-to-pypi-with-twine
 
 用到的一些指令是：
 
@@ -85,4 +86,3 @@ twine upload dist/*
 ## 获取源码
 
 [borninfreedom/easylogx: 简化了python logging的使用和冗余代码量 (github.com)](https://github.com/borninfreedom/easylogx)
-

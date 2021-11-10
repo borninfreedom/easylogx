@@ -1,8 +1,8 @@
 import setuptools
 
 setuptools.setup(
-    name="easy_logx",
-    version="0.0.3",
+    name="easylogx",
+    version="0.0.6",
     author="bug404",
     author_email="z19040042@s.upc.edu.cn",
     description="A wrapper for python logging",

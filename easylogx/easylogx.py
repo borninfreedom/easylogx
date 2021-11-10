@@ -10,11 +10,18 @@ import logging
 # DEBUG = 10
 # NOTSET = 0
 
+DEBUG = logging.DEBUG
+INFO = logging.INFO
+WARN = logging.WARN
+WARNING = logging.WARNING
+ERROR = logging.ERROR
+FATAL = logging.FATAL
+CRITICAL = logging.CRITICAL
 
 MODE = Union['w', 'a']
 
 
-class EasyLog:
+class Easylogx:
     def __init__(self, logger_name: str = __name__, log_level: int = logging.DEBUG) -> None:
         self.logger = logging.getLogger(logger_name)
         self.logger.setLevel(log_level)
@@ -46,7 +53,7 @@ class EasyLog:
 
 
 if __name__ == '__main__':
-    logger = EasyLog()
+    logger = Easylogx()
     logger.logger.debug('nihao')
     n = 3
     logger.debug(f'nihao={n}')
